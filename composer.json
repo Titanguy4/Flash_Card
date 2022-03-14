@@ -1,0 +1,9 @@
+{
+    "name": "htanguy/flash-card",
+    "autoload": {
+        "psr-4": {
+            "Htanguy\\FlashCard\\": "src/"
+        }
+    },
+    "require": {}
+}
