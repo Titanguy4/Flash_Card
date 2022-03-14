@@ -1,0 +1,17 @@
+{
+    "name": "htanguy/flash-card",
+    "autoload": {
+        "psr-4": {
+            "Htanguy\\FlashCard\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Titanguy4",
+            "email": "hugo.tanguy4@gmail.com"
+        }
+    ],
+    "require": {
+        "altorouter/altorouter": "^2.0"
+    }
+}
