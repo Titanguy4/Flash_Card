@@ -1,9 +1,12 @@
 * {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-h1 {
-    color: red;
+body h1 {
+  color: red;
+  font-size: 2rem;
 }
+
+/*# sourceMappingURL=style.css.map */
