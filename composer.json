@@ -2,7 +2,7 @@
     "name": "htanguy/flash-card",
     "autoload": {
         "psr-4": {
-            "Htanguy\\FlashCard\\": "src/"
+            "Htanguy\\": "src/"
         }
     },
     "authors": [
@@ -12,6 +12,8 @@
         }
     ],
     "require": {
-        "altorouter/altorouter": "^2.0"
+        "altorouter/altorouter": "^2.0",
+        "symfony/var-dumper": "^6.0",
+        "filp/whoops": "^2.14"
     }
 }

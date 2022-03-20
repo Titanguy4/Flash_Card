@@ -1,18 +1,20 @@
 <?php
 
+use Htanguy\Router;
+
 require "../vendor/autoload.php";
 
-$router = new AltoRouter();
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->register();
 
-$router->map('GET', '/' , 
-    function() { require "home.html";}, 'home');
+$router = new Router(dirname(__DIR__) . '/view');
 
-$match = $router->match();
-
-// Look if arguments was pasted in the search bar
-if( is_array($match) && is_callable( $match['target'] ) ) {
-	call_user_func_array( $match['target'], $match['params'] ); 
-} else {
-	// no route was matched
-	header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
-}
+$router
+	->get('/', 'home', 'home')
+	->get('/connection', 'connection', 'connection')
+	->get('/communautee', 'categorie/communautee', 'communautee')
+	->get('/classe', 'categorie/classe', 'classe')
+	->get('/mydecks', 'categorie/mydecks', 'mydecks')
+	->get('/deconnexion', 'deconnexion', 'deconnexion')
+	->run();

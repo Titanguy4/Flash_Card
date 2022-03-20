@@ -4,9 +4,72 @@
   list-style: none;
 }
 
-body h1 {
-  color: red;
-  font-size: 2rem;
+body {
+  background-color: rgba(221, 221, 221, 0.733);
+}
+body .main-title {
+  text-align: center;
+  margin: 60px 0px 10px 0px;
+  font-size: 8rem;
+}
+body .subtitle {
+  text-align: center;
+  margin: 10px 0px;
+  font-size: 2.5rem;
+}
+body h3 {
+  text-align: center;
+  margin: 20px 0px;
+  font-size: 1.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 7vh;
+  background-color: rgba(128, 128, 128, 0.486);
+}
+nav .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+}
+nav .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 50%;
+}
+
+.decks {
+  width: 85%;
+  margin: 70px auto 20px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.decks .deck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16%;
+  height: 150px;
+  background-color: blanchedalmond;
+}
+
+footer {
+  margin: 75px 0px;
+  display: flex;
+  justify-content: center;
+}
+footer .name {
+  width: 50%;
+}
+footer .credit {
+  width: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */
