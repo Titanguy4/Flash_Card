@@ -2,11 +2,16 @@
     padding: 0;
     margin: 0;
     list-style: none;
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
 }
 
 body {
 
-    background-color: rgba(221, 221, 221, 0.733);
+    background-color: #f5f3f4;
 
     .main-title {
         text-align: center;
@@ -31,16 +36,31 @@ nav {
     display: flex;
     justify-content: space-between;
 
-    height: 7vh;
-
-    background-color: rgba(128, 128, 128, 0.486);
+    background-color: #a4161a;
 
     .logo {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 15%;
+        padding: 10px 0px;
+
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 15%;
+    
+            img {
+                padding: 0px 10px;
+                width: 75px;
+                height: 75px;
+            }
+        }
     }
+    
+    
 
     .nav {
         display: flex;
@@ -66,7 +86,7 @@ nav {
         justify-content: center;
         width: 16%;
         height: 150px;
-        background-color: blanchedalmond;
+        background-color: #d3d3d3;
     }
 }
 

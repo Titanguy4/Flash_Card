@@ -36,4 +36,14 @@ CREATE TABLE deck_card
     deck_id INT UNSIGNED NOT NULL,
     card_id INT UNSIGNED NOT NULL,
     PRIMARY KEY (deck_id, card_id)
+    CONSTRAINT fk_deck
+        FOREIGN KEY (deck_id),
+        REFERENCES deck (id),
+        ON DELETE CASCADE,
+        ON UPDATE RESTRICT,
+    CONSTRAINT fk_card
+        FOREIGN KEY (card_id),
+        REFERENCES card (id)
+        ON DELETE CASCADE, 
+        ON UPDATE RESTRICT
 )

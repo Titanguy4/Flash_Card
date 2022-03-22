@@ -9,13 +9,20 @@ use Htanguy\Router;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Flash_Cards</title>
+    <title><?= isset($title) ? $title : 'Flash Cards'?></title>
 </head>
 <header>
     <nav>
+        
+        
         <div class="logo">
-            <a href="<?= $router->url('home')?>"><p>logo</p></a>
+            <a href="<?= $router->url('home')?>">
+                <img src="image/cards.png" alt="logo">
+                <p>logo</p>
+            </a>
         </div>
+        
+        
         <div class="nav">
             <p><a href="<?= $router->url('communautee')?>">Communautée</a></p>
             <p><a href="<?= $router->url('classe')?>">Classe</a></p>
