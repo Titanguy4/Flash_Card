@@ -2,7 +2,7 @@
     "name": "htanguy/flash-card",
     "autoload": {
         "psr-4": {
-            "Htanguy\\": "src/"
+            "App\\": "src/"
         }
     },
     "authors": [

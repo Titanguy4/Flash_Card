@@ -1,6 +1,6 @@
 <?php
 
-namespace Htanguy;
+namespace App;
 
 use AltoRouter;
 
@@ -23,6 +23,22 @@ class Router {
         return $this;
     }
 
+    public function post(string $slug, string $path, ?string $name = null): self
+    {
+        
+        $this->router->map('POST', $slug, $path, $name);
+        return $this;
+    }
+
+    public function match(string $slug, string $path, ?string $name = null): self
+    {
+        
+        $this->router->map('GET|POST', $slug, $path, $name);
+        return $this;
+    }
+
+    
+
     public function url(string $name, array $params = []): string
     {
         return $this->router->generate($name, $params);
@@ -32,6 +48,7 @@ class Router {
     {
         $match = $this->router->match();
         $view = $match['target'];
+        $params = $match['params'];
         $router = $this;
         ob_start();
         require $this->view_path . DIRECTORY_SEPARATOR . $view . '.php';

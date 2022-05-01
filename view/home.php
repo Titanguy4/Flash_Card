@@ -1,12 +1,15 @@
 <?php
+
+use App\Model\Decks;
+use App\Connection;
+
 $title = 'Home Page';
 
-$pdo = new PDO('mysql:host=127.0.0.1;dbname=flash_card', 'htanguy', 'Hugoelsamathis29');
-$query = $pdo->query('SELECT * FROM deck');
-$results = $query->fetchAll(PDO::FETCH_OBJ);
+$pdo = Connection::getPDO();
+
+$query = $pdo->query("SELECT * FROM deck LIMIT 18");
+$decks = $query->fetchAll(PDO::FETCH_CLASS, Decks::class);
 ?>
-
-
 
 
 
@@ -15,9 +18,13 @@ $results = $query->fetchAll(PDO::FETCH_OBJ);
 <h3>Optimisez votre apprentissage</h3>
 
 <div class="decks">
-    <?php for($i = 0; $i < 18; $i++): ?>
+    <?php foreach($decks as $deck): ?>
+        
         <div class="deck">
-            <h2>Deck <?= $i ?></h2>
+            <a href="<?= $router->url('deck', ['id' => $deck->getId(), 'categorie' => $deck->getCategory(), 'slug' => $deck->getSlug()]) ?>">
+                <h2><?= $deck->getTitle() ?></h2>
+            </a>
         </div>
-    <?php endfor; ?>
+        
+    <?php endforeach; ?>
 </div>

@@ -25,9 +25,9 @@ class ComposerStaticInit7a8cb4059952b115f65e75e323a19fea
         array (
             'Psr\\Log\\' => 8,
         ),
-        'H' => 
+        'A' => 
         array (
-            'Htanguy\\' => 8,
+            'App\\' => 4,
         ),
     );
 
@@ -48,7 +48,7 @@ class ComposerStaticInit7a8cb4059952b115f65e75e323a19fea
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
         ),
-        'Htanguy\\' => 
+        'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

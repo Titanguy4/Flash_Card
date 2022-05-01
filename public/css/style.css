@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -8,8 +9,9 @@
   color: black;
 }
 
+/*  Contenu de la page principale  */
 body {
-  background-color: #f5f3f4;
+  background-color: #F9F9F9;
 }
 body .main-title {
   text-align: center;
@@ -27,10 +29,11 @@ body h3 {
   font-size: 1.5rem;
 }
 
+/* Contenu de la barre de navigation */
 nav {
   display: flex;
   justify-content: space-between;
-  background-color: #a4161a;
+  background-color: #FEBCC8;
 }
 nav .logo {
   display: flex;
@@ -58,6 +61,7 @@ nav .nav {
   width: 50%;
 }
 
+/* Mise en forme de la grille de la page principale */
 .decks {
   width: 85%;
   margin: 70px auto 20px auto;
@@ -72,9 +76,231 @@ nav .nav {
   justify-content: center;
   width: 16%;
   height: 150px;
+  overflow: hidden;
   background-color: #d3d3d3;
 }
 
+/* Contenu des pages Communautée/Classe/MyDecks */
+.container {
+  width: 85%;
+  margin: 55px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px 4px;
+}
+.container .container_title {
+  display: flex;
+  margin: 0 0 30px 0;
+  padding: 5px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .container_title h1 {
+  width: 55%;
+}
+.container .theme {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin: 30px 0;
+}
+.container .theme .theme_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container .theme .theme_title .title_img {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+}
+.container .theme .theme_title h1 {
+  margin: 0 10px;
+}
+.container .theme .decks_box {
+  display: flex;
+  margin: 10px 0;
+  padding: 5px;
+  border: 1px solid black;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90%;
+  margin: 8px auto;
+}
+
+/* Contenu de la page d'affichage d'une carte */
+/* Contenu des boutons */
+.button_edit {
+  font-weight: 600;
+  border: solid 2px black;
+  outline: 0;
+  padding: 1rem 4rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.08rem;
+  background-color: white;
+  border-radius: 0.35rem;
+  position: relative;
+  cursor: pointer;
+}
+.button_edit::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #87cefa;
+  z-index: -1;
+  border-radius: 0.35rem;
+  border: solid 2px black;
+  transition: all 0.3s ease-in-out;
+  width: 90%;
+  height: 90%;
+}
+.button_edit:hover::after {
+  width: 100%;
+  height: 100%;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+.button_suppression {
+  font-weight: 600;
+  border: solid 2px black;
+  outline: 0;
+  padding: 1rem 4rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.08rem;
+  background-color: white;
+  border-radius: 0.35rem;
+  position: relative;
+  cursor: pointer;
+}
+.button_suppression::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fa8585;
+  z-index: -1;
+  border-radius: 0.35rem;
+  border: solid 2px black;
+  transition: all 0.3s ease-in-out;
+  width: 90%;
+  height: 90%;
+}
+.button_suppression:hover::after {
+  width: 100%;
+  height: 100%;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+/* Contenu de la carte */
+.card_page {
+  width: 30%;
+}
+.card_page .card {
+  width: 15vw;
+  height: 42vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 30px auto;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: ease-in 0.5s;
+}
+.card_page .card .card_face {
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+}
+.card_page .card .back {
+  transform: rotateY(180deg);
+}
+.card_page .card .contour {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border: solid 1px black;
+  border-radius: 0.6rem;
+}
+.card_page .card .contour .contour_interieur {
+  width: 15vw;
+  height: 42vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px black;
+  border-radius: 0.6rem;
+}
+.card_page .card .contour .contour_interieur h2 {
+  color: black;
+  text-align: center;
+}
+
+.card_time {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0%;
+  transition: 1s;
+}
+.card_time .time_button {
+  margin: 35px 0;
+  font-weight: 600;
+  border: solid 2px black;
+  outline: 0;
+  padding: 1rem 4rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.08rem;
+  background-color: #c8f4d5;
+  border-radius: 0.35rem;
+  position: relative;
+  cursor: pointer;
+}
+.card_time .time_button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #7ee59c;
+  z-index: -1;
+  border-radius: 0.35rem;
+  border: solid 2px black;
+  transition: all 0.3s ease-in-out;
+  width: 90%;
+  height: 90%;
+}
+.card_time .time_button:hover::after {
+  width: 100%;
+  height: 100%;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card_time.show {
+  opacity: 100%;
+}
+
+/* Contenu du footer */
 footer {
   margin: 75px 0px;
   display: flex;
