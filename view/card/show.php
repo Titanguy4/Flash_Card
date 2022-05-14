@@ -27,6 +27,7 @@ foreach($ids as $id) {
 }
 
 $session = new Session($cards);
+$a = 0;
 
 $card = $session->pick();
 
